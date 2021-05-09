@@ -1,21 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
     <title>Send e-mail</title>
-</head>
-<body>
-    <form action="{% url 'send-email-view' %}" method="POST">
+  </head>
+  <body>
+    <form action="{% url 'send-email-view' %}" method="POST" style="margin-top: 5%; margin-left: 25%; width:50%">
         {% csrf_token %}
-        <label for="subject">Subject</label>
-        <input type="text" name="subject" >
-        <label for="message">Message</label>
-        <input type="text" name="message">
-        <label for="emails">E-mails(multiple with comma)</label>
-        <input type="email" name="emails" placeholder="smth@smth.com,smth2@smth.com" multiple>
-        <input type="submit">
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="email" class="form-control" id="subject" name="subject">
+          </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <input type="email" class="form-control" id="message" name="message">
+        </div>
+        <div class="form-group">
+            <label for="emails">E-mails(multiple with comma)</label>
+            <input type="email" name="emails" class="form-control" id="emails" placeholder="smth@smth.com, smth2@smth.com" multiple>
+        </div>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Send">
     </form>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+  </body>
 </html>
